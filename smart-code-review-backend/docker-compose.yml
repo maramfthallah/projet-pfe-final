@@ -1,0 +1,21 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: smartcodereview-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: smartcodereview
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - smartcodereview-network
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  smartcodereview-network:
+    driver: bridge

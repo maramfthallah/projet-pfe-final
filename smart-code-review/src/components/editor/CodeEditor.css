@@ -1,0 +1,284 @@
+/* ============================================================
+   Code Editor — Styles
+   ============================================================ */
+
+.ce {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ─── Tabs ─── */
+.ce__tabs {
+  display: flex;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  height: var(--tab-h);
+  min-height: var(--tab-h);
+  overflow: hidden;
+}
+
+.ce__tabs-scroll {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.ce__tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ce__tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: var(--tab-h);
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  border-right: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  position: relative;
+}
+.ce__tab:hover {
+  color: var(--text-secondary);
+  background: var(--bg-hover);
+}
+
+.ce__tab--active {
+  color: var(--text-primary) !important;
+  background: var(--bg-primary) !important;
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+.ce__tab-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.ce__tab-name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ce__tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+
+.ce__tab-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  opacity: 0;
+  transition: all var(--duration-fast) ease;
+}
+.ce__tab:hover .ce__tab-close {
+  opacity: 1;
+}
+.ce__tab-close:hover {
+  background: var(--bg-active);
+  color: var(--text-primary);
+}
+.ce__tab-close .material-symbols-rounded {
+  font-size: 14px;
+}
+
+/* ─── Editor Area ─── */
+.ce__editor-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ─── Breadcrumb ─── */
+.ce__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 16px;
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.ce__breadcrumb::-webkit-scrollbar { display: none; }
+
+.ce__breadcrumb-part {
+  color: var(--text-tertiary);
+}
+.ce__breadcrumb-active {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.ce__breadcrumb-sep {
+  color: var(--text-muted);
+  margin: 0 2px;
+}
+.ce__breadcrumb-lang {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+
+/* ─── Code Container ─── */
+.ce__code-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.ce__line-numbers {
+  width: 48px;
+  min-width: 48px;
+  padding: 8px 8px 8px 0;
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border-subtle);
+  overflow: hidden;
+  text-align: right;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ce__line-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--text-muted);
+  height: 19.2px;
+}
+
+.ce__textarea {
+  flex: 1;
+  resize: none;
+  padding: 8px 16px;
+  background: var(--bg-primary);
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  tab-size: 2;
+  white-space: pre;
+  overflow: auto;
+  caret-color: var(--accent-primary);
+}
+.ce__textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ─── Status Bar ─── */
+.ce__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-3);
+  height: 24px;
+  min-height: 24px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-primary);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+.ce__status-left,
+.ce__status-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.ce__status-sep {
+  color: var(--text-muted);
+}
+
+.ce__status-modified {
+  color: var(--yellow);
+  font-weight: 500;
+}
+
+/* ─── Empty State ─── */
+.ce__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  text-align: center;
+  padding: var(--sp-8);
+}
+
+.ce__empty-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-subtle), rgba(136, 98, 255, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ce-pulse 3s ease-in-out infinite;
+}
+.ce__empty-icon .material-symbols-rounded {
+  font-size: 36px;
+  color: var(--accent-primary);
+}
+
+@keyframes ce-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(136, 98, 255, 0.1); }
+  50% { box-shadow: 0 0 0 16px rgba(136, 98, 255, 0); }
+}
+
+.ce__empty-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ce__empty-desc {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.ce__empty-shortcuts {
+  margin-top: var(--sp-2);
+}
+
+.ce__shortcut {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.ce__shortcut kbd {
+  padding: 2px 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}

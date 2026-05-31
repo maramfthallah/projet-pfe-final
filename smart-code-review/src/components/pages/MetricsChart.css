@@ -1,0 +1,31 @@
+.metrics-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metrics-chart__summary {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.metrics-chart__num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.metrics-chart__label {
+  font-size: 0.85rem;
+  color: #9aa3c7;
+}
+
+.metrics-chart__chart {
+  width: 100%;
+  min-height: 140px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+}

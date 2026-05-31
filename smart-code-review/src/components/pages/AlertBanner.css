@@ -1,0 +1,32 @@
+.alert-banner {
+  display: flex;
+  align-items: center;
+  background: #ffeaea;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.alert-banner__icon {
+  margin-right: 0.75rem;
+  font-size: 1.3em;
+}
+.alert-banner--critical {
+  background: #ffeaea;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+.alert-banner--warning {
+  background: #fff7e6;
+  color: #b45309;
+  border-color: #fcd34d;
+}
+.alert-banner--info {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #7dd3fc;
+}

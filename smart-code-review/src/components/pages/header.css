@@ -1,0 +1,198 @@
+/* ============================================================
+   Header — Styles
+   ============================================================ */
+
+.hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  padding: 0 var(--sp-3);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  user-select: none;
+}
+
+/* ─── Left ─── */
+.hdr__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+/* ─── Icon button ─── */
+.hdr__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) ease;
+}
+.hdr__icon-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+.hdr__icon-btn--active {
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+}
+.hdr__icon-btn .material-symbols-rounded {
+  font-size: 20px;
+}
+
+/* ─── Brand ─── */
+.hdr__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.hdr__brand-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--accent-primary), #6d5aff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hdr__brand-mark svg {
+  width: 14px;
+  height: 14px;
+}
+
+.hdr__brand-name {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.hdr__brand-name > span {
+  color: var(--accent-primary);
+}
+.hdr__brand-name > span > span {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ─── Repo Badge ─── */
+.hdr__repo-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-left: var(--sp-2);
+}
+
+/* ─── Right ─── */
+.hdr__right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+/* ─── User ─── */
+.hdr__user {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.hdr__avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--border-primary);
+  object-fit: cover;
+}
+
+.hdr__avatar-fallback {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.hdr__user-name {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ─── Logout ─── */
+.hdr__btn-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--text-tertiary);
+  transition: all var(--duration-fast) ease;
+}
+.hdr__btn-logout:hover {
+  background: var(--red-subtle);
+  color: var(--red);
+}
+.hdr__btn-logout .material-symbols-rounded {
+  font-size: 18px;
+}
+
+/* ─── GitHub Sign In ─── */
+.hdr__btn-github {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 16px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+.hdr__btn-github:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hdr__brand-name {
+    display: none;
+  }
+  .hdr__repo-badge {
+    display: none;
+  }
+  .hdr__user-name {
+    display: none;
+  }
+}
