@@ -10,7 +10,7 @@ const {
   pushChanges,
 } = require('../controllers/pushController');
 
-// All routes are protected
+// All routes should be protected
 router.use(protect);
 
 // Repository routes
